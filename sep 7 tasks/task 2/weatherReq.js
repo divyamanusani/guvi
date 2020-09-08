@@ -1,16 +1,13 @@
-
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
-
-var req= new XMLHttpRequest();
+var xhr = new XMLHttpRequest();
 var url_str="http://api.openweathermap.org/data/2.5/weather?q=Tirupati,IN&APPID=69204f6dbdf2236812cf8653a217ac4a";
-req.open('GET',url_str);
-
-req.onload = function(){
+xhr.open("GET", url_str);
+ 
+xhr.onreadystatechange = function () {
     console.log("readyState = " + this.readyState + ", status = " + this.status);
-    var data = JSON.parse(this.responseText);
-    console.log(data);
-   
-}
-req.send();
-
+    if (this.readyState == 4 && this.status == 200) {
+        var result = this.responseText;
+        console.log(JSON.parse(result));
+    }
+};
+ 
+xhr.send();

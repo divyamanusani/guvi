@@ -1,15 +1,12 @@
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
-var req= new XMLHttpRequest();
-var url_str="https://dog.ceo/api/breeds/list/all";
-req.open('GET',url_str);
-req.send();
-
-req.onload = function(){
-
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://dog.ceo/api/breeds/list/all");
+ 
+xhr.onreadystatechange = function () {
     console.log("readyState = " + this.readyState + ", status = " + this.status);
-    var data=JSON.parse(this.responseText);
-    console.log(data);
-    console.log(data.hound);
-    console.log(data.mountain[0]);
-}
+    if (this.readyState == 4 && this.status == 200) {
+        var result = this.responseText;
+        console.log(JSON.parse(result));
+    }
+};
+ 
+xhr.send();

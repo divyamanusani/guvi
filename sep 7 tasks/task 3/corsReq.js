@@ -1,14 +1,13 @@
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
 var req= new XMLHttpRequest();
-var url_str="https://api.domainsdb.info/v1/domains/search?domain=facebook&zone=com";
+var url_str="https://cors-anywhere.herokuapp.com/https://api.domainsdb.info/v1/domains/search?domain=facebook&zone=com";
 req.open('GET',url_str);
 req.setRequestHeader('Access-Control-Allow-Origin','*');
-req.send();
 
-req.onload = function(){
+req.onreadystatechange = function () {
     console.log("readyState = " + this.readyState + ", status = " + this.status);
-    var data=JSON.parse(this.responseText);
-    console.log(data);
-    
-}
+    if (this.readyState == 4 && this.status == 200) {
+        var result = this.responseText;
+        console.log(JSON.parse(result));
+    }
+};
+req.send();
