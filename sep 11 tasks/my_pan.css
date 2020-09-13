@@ -1,0 +1,65 @@
+header{
+   
+    background-color: maroon;
+    color:white;
+    text-align: center;
+    border:red;
+    padding:4px;
+}
+
+body{
+    margin: 20px;
+}
+
+.astrek{
+    color:red;
+}
+
+table,th,td{
+    border-collapse: collapse;
+    border:1px solid black;
+   width:100%;
+    text-align: left;
+    padding:3px;
+    background-color:lightyellow;
+}
+
+.tableCol1{
+   
+ width:1%;
+}
+
+.innertable{
+    border:none;
+    width:100%;
+    border-collapse:collapse;
+}
+
+.innertable th{
+border-collapse:collapse;
+border:none;
+width:30%;
+
+}
+
+.fontNormal{
+    font-weight:normal;
+}
+
+#birthyear{
+    width:40px;
+}
+.genderTable{
+    width:100%;
+    border:none;
+}
+.genderTable th,td{
+    border:none;
+    width:50%;
+}
+
+#tablefooter, #footer tr,#footer td{
+    width:100%;
+   text-align: left;
+    border:none;
+}
