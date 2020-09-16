@@ -1,16 +1,10 @@
-body{
-    overflow: scroll;
-}
-
 #mainPage{
     margin:auto;
     max-width:1000px;
     border-radius: 50px;
-    border:1px solid black;
-    height:100%;
     display:block;
     background-color: black;
-    overflow:scroll;
+    height:1500px;
 }
 
 div.b {
@@ -18,7 +12,6 @@ div.b {
     height: 400px;
     background-image:url('web1.jpg');
     position:absolute;
-    
     top:0;
     left:0;
     border-top-left-radius: 50px;
@@ -29,8 +22,7 @@ div.b {
 div.c {
     width: 100%;
     height: 400px;
-    background-image:url(grey.jpg);
-    
+    background-image:url(grey.jpg); 
    position:absolute;
    transform: skewY(175deg);
     top:300px;
@@ -58,9 +50,6 @@ div.c {
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
   }
-  
-
- 
 
 .borderClass{
     position:relative;
@@ -68,10 +57,8 @@ div.c {
    top:50px;
     left:50px;
     right:50px;
-    bottom:50px;
    margin:5px;
   padding:50px;
-   border:1px dashed rgb(131, 44, 44);
     border-radius: 50px;
     color:white;
 }
@@ -90,49 +77,32 @@ div.c {
     letter-spacing: 1px;
 }
 
-.absolutePosB{
+.absolute{
     position: absolute;
     padding:20px;
-    font-family: 'Sofia';
-    font-size: 22px;
     text-align: center;
+    font-size: 22px;
     letter-spacing: 3px;
-    
+    font-family: 'Beth Ellen';
+    color:black;  
+}
+
+.absolutePosB{
+    font-family: 'Sofia';  
+    color:white;   
 }
 
 .absoluteC{
-    position: absolute;
-    top: 350px;
-    padding:20px;
-    color:black;
-    font-family: 'Beth Ellen';
-    font-size: 22px;
-    text-align: center;
-    letter-spacing: 3px;
-    
+     top: 350px;      
 }
 
 .absoluteD{
-    position: absolute;
-    top: 750px;
-    padding:20px;
-    color:black;
-    font-family: 'Beth Ellen';
-    font-size: 22px;
-    text-align: center;
-    letter-spacing: 3px;
-    
+    top: 750px;   
 }
 .absoluteE{
-    position: absolute;
+  
     top: 1200px;
-    padding:20px;
-    color:white;
-    font-family: 'Beth Ellen';
-    font-size: 22px;
-    text-align: center;
-    letter-spacing: 3px;
-    
+    color:white;    
 }
 
 .capital{
