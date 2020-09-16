@@ -1,0 +1,114 @@
+body{
+    margin:auto;
+    max-width:50%;
+}
+
+.header{
+    width:100%;
+    background-color: grey;
+    height:280px;
+}
+
+.absoluteWhite{
+    position: absolute;
+    width:inherit;
+    height:20px;
+    top:200px;
+    left:0;
+    background-color:white;
+}
+
+.absolutePhoto{
+    position:absolute;
+    top:40px;
+    left:45%;
+}
+
+img{
+    border-radius: 70px;
+    width:150px;
+    height:150px;
+    border:5px dotted orange;
+   
+}
+
+.absoluteName{
+    position: absolute;
+    width:350px;
+    height:80px;
+    top:170px;
+    background-color: orange;
+    border-radius: 10px;
+    left:40%;
+    text-align:center;
+    font-size: 50px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.address{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.bodySection{
+    position:absolute;
+    margin:auto;
+    width:50%;
+}
+
+.fa,.fas,.fab
+{
+    font-size:25px;
+    color:black;
+}
+
+#left{
+    position:absolute;
+   width:48%;
+    border-right:2px solid darkgray;
+    margin:20px 10px;
+    padding-right:10px;
+}
+
+.percentage{
+    width:200px;
+    height:5px;
+   background-image: linear-gradient(to right,orange, rgb(151, 144, 144));
+}
+
+.circle{
+    position: relative;
+    border:1px solid grey;
+    background-color: whitesmoke;
+    border-radius:50px;
+    width:18px;
+    height:18px;
+    left:140px;
+    bottom:5px;    
+}
+.circle2{
+   left:160px;
+}
+.circle3{
+    left:120px;
+ }
+ .circle4{
+    left:80px;
+ }
+ .circle5{
+    left:150px;
+ }
+ .circle6{
+    left:100px;
+ }
+
+ #right{
+   position:relative;
+   left:500px;
+   width:42%;
+    
+    margin:20px 10px;
+    padding-left:5px;
+}
+ 
+ 
