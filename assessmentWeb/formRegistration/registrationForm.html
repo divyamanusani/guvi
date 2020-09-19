@@ -1,0 +1,165 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="main-page">
+        <form name="myForm">
+            <div class="row">
+                <div class="colleft">
+                    <label for="fullName">Full Name</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="fa">&#xf2be;</i>
+                        </div>
+                        <div class="colbig">
+                            <input type="text" name="fname" id="fullName" placeholder="Full Name" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="address1">Address Line 1</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="fa">&#xf2ba;</i>
+                        </div>
+                        <div class="colbig">
+                            <input type="text" name="addr1" id="address1" placeholder="Address Line 1" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="address2">Address Line 2</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="fa">&#xf2ba;</i>
+                        </div>
+                        <div class="colbig">
+                            <input type="text" name="addr2" id="address2" placeholder="Address Line 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="city">City</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="fa">&#xf1ad;</i>
+                        </div>
+                        <div class="colbig">
+                            <input type="text" name="mycity" id="city" placeholder="City" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="state">State/Province/Region</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="material-icons">place</i>
+                        </div>
+                        <div class="colbig">
+                            <input type="text" name="stateregion" id="state" placeholder="State/Province/Region" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="postal">Postal Code/ Zip</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="fa fa-envelope icon"></i>
+                        </div>
+                        <div class="colbig">
+                            <input type="number" name="postalcode" id="postal" placeholder="Postal Code/ Zip" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="country">Country</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="material-icons">&#xe55b;</i>
+                        </div>
+                        <div class="colbig">
+                            <select name="country">
+                                <option value="0">Select Country</option>
+                                <option value="1">India</option>
+                                <option value="2">Pakisthan</option>
+                                <option value="3">Afghanistan</option>
+                                <option value="4">Bangladesh</option>
+                                <option value="5">UK</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">Email</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="fa">&#xf2be;</i>
+                        </div>
+                        <div class="colbig">
+                            <input type="email" name="myemail" id="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="colleft">
+                    <label for="mobileno">Phone Number</label>
+                </div>
+                <div class="colright">
+                    <div class="row">
+                        <div class="colsmall">
+                            <i class="fa">&#xf2be;</i>
+                        </div>
+                        <div class="colbig">
+                            <input type="number" name="mymobile" id="mobileno" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row submit"><br>
+                <input type="submit" value="Submit" class="subbtn" onclick="myfun()"></button>
+            </div>
+        </form>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

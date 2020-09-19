@@ -1,0 +1,89 @@
+body{
+    font-family: 'Alegreyaya';
+    font-size:20px;
+}
+
+h1{
+    text-align: center;
+    font-size:50px;
+}
+
+.row{
+    margin:auto;
+    width:50%;
+    margin-top:40px;
+}
+
+.header{
+margin:10px 5px;
+}
+
+table{
+    width:100%;
+    border-spacing:15px;
+}
+.inline{
+    display: inline;
+    text-align: right;
+}
+.center{
+    width:94%;
+    background-color:lightgrey;
+    padding:30px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.floatleft{
+    float:left;
+    font-size: 25px;
+    padding:5px;
+    margin:5px;
+    color:slategray;
+    font-weight: bold;
+
+}
+
+.floatright{
+    float:right;
+    margin:10px 5px;
+
+}
+
+a{
+    padding:20px;
+   
+    border-radius: 5px;
+width:10px;
+height:7px;
+font-size:20px;
+text-decoration: none;
+color:blue;
+}
+
+a:hover{
+    background-color: blue;
+    color:white;
+}
+
+.header:after{
+    clear: both;
+}
+
+.green,.blue{
+    color:white;
+    background-color: limegreen;
+    padding:10px;
+    border: 2px solid limegreen;
+    border-radius: 3px;
+   width:20%;
+   font-size:22px;
+    width:20%;
+}
+
+.blue{
+    background-color: blue;  
+    border: 2px solid blue;
+    width:30%;
+}
+

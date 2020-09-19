@@ -1,0 +1,31 @@
+.row{
+    width:50%;
+    margin:auto;
+}
+
+table{
+border:1px solid black;
+height:30%;
+border-spacing:20px;
+background-color: lightgray;
+}
+td{
+width:300px;}
+
+input[type="button"],input[type="text"]
+         { 
+         background-color:lightcoral; 
+         color: black; 
+         border: solid black 2px; 
+         width:100%;
+         padding:20px;
+         font-size:30px;
+         border-radius: 5px;
+    
+         } 
+
+         input[type="text"] 
+         { 
+         background-color:white;  
+         letter-spacing: 6px;
+         } 
