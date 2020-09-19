@@ -10,8 +10,10 @@ border-spacing:20px;
 background-color: lightgray;
 width:100%;
 }
+
 td{
-width:300px;}
+width:300px;
+}
 
 input[type="button"],input[type="text"]
          { 
@@ -22,11 +24,14 @@ input[type="button"],input[type="text"]
          padding:20px;
          font-size:30px;
          border-radius: 5px;
-    
-         } 
+        } 
 
-         input[type="text"] 
+input[type="text"] 
          { 
          background-color:white;  
-         letter-spacing: 6px;
          } 
+
+         input[type="button"]:hover{
+             background-color: orange;
+             cursor: pointer;
+         }       

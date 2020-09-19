@@ -59,10 +59,10 @@ inputc.setAttribute('onclick', 'reset()');
 
 var tr = [];
 
-tr[0] = attrSet(['1', '2', '3', '/'], ["display('1')", "display('2')", "display('3')", "display('/')"]);
-tr[1] = attrSet(['4', '5', '6', '-'], ["display('4')", "display('5')", "display('6')", "display('-')"]);
-tr[2] = attrSet(['7', '8', '9', '+'], ["display('7')", "display('8')", "display('9')", "display('+')"]);
-tr[3] = attrSet(['.', '0', '=', '*'], ["display('.')", "display('0')", "solve()", "display('*')"]);
+tr[0] = attrSet(['1', '2', '3', '/'], ["display('1')", "display('2')", "display('3')", "display(' / ')"]);
+tr[1] = attrSet(['4', '5', '6', '-'], ["display('4')", "display('5')", "display('6')", "display(' - ')"]);
+tr[2] = attrSet(['7', '8', '9', '+'], ["display('7')", "display('8')", "display('9')", "display(' + ')"]);
+tr[3] = attrSet(['.', '0', '=', '*'], ["display('.')", "display('0')", "solve()", "display(' * ')"]);
 
 
 table.append(tr1, ...tr);
