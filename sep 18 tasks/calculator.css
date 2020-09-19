@@ -8,6 +8,7 @@ border:1px solid black;
 height:30%;
 border-spacing:20px;
 background-color: lightgray;
+width:100%;
 }
 td{
 width:300px;}
