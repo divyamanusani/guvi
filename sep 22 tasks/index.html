@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form name="myForm" class="form-horizontal"  method="POST">
+            <div class="form-group">
+                <label class="control-label col-md-4" for="fullname">Full Name</label>
+                <div class="col-md-8">
+                    <input type="text" name="name" id="fullname" class="form-control input-lg"
+                        placeholder="Enter Full Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="email">Email Id</label>
+                <div class="col-md-8">
+                    <input type="email" name="Email" id="email" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="pwd">Password</label>
+                <div class="col-md-8">
+                    <input type="password" name="passwrd" id="pwd" class="form-control input-lg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4">Gender</label>
+                <div class="left">
+
+                    <div class="radio-inline">
+                        <label class="control-label"><input type="radio" name="gender">Female
+                        </label>
+                    </div>
+                    <div class="radio-inline">
+                        <label class="control-label"><input type="radio" name="gender">Male
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="dob">Date of Birth</label>
+                <div class="col-md-8">
+                    <input type="date" name="dateofbirth" id="dob" class="form-control input-lg">
+                </div>   
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-6">
+                    <input type="button" class="btn btn-primary" value="Submit" onclick="getDetails()">
+                </label>
+            </div>
+  
+        </form>
+        <div class="comment" name="commen" id="comment"></div>
+     
+ 
+    </div>
+    <script src="details.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+body{
+    margin-top: 50px;
+    width:80%;
+    background-color: lightgrey;
+}
+
+.left{
+    position: relative;
+    left:5%;
+}
+.width{
+    position: relative;
+    left:30%;
+    width:70%;
+}
+.comment {position:relative;
+    left:30%;
+    display:none;
+    background-color: white;
+    width:80%;
+    height:20%;
+    text-align: center;
+    font-size:22px; 
+top:50%;
+padding:20px;
+}
