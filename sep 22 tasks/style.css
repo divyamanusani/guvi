@@ -27,6 +27,8 @@ padding:20px;
 
 input[type="checkbox"],input[type="radio"]{
     zoom:1.5;
+  margin:5px;
+    
 }
 
 table,tr,td{
@@ -38,4 +40,8 @@ th,td{
     padding:20px;
     margin:10px;
    text-align: center;
+}
+
+label{
+    padding-left:10px;
 }
