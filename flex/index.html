@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .row {
+            display: flex;
+            flex-grow: 1;
+            padding: 5%;
+            flex-basis: 10%;
+            flex-wrap: wrap;
+        }
+
+        p{
+            display:flex;
+            padding:1%;
+            order:2;
+        }
+
+        @media (max-width: 920px) {
+            .row {
+                flex: 1 21%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <p>Remember it’s not</p>
+        <p> have to compe
+        </p>
+        <p>Remember it’s not 25% (100% / 4) because we </p>
+        <p> have to compensate for the padding that I added earlier. We could avoid this with box-sizing: border-box,
+            but that’s your call.)
+        </p>
+        <p>Remember it’s not 25% (100% / 4) because we </p>
+        <p> have to compensate for the padding that I added earlier. We could avoid this with box-sizing: border-box,
+            but that’s your call.)
+        </p>
+        <p>Remember it’s not 25% (100% / 4) because we </p>
+        <p> have to compensate for the padding that I added earlier. We could avoid this with box-sizing: border-box,
+            but that’s your call.)
+        </p>
+        <p>The previous lines of CSS almost give us the desired result we want because we get four items per row. But,
+            the
+            last row has two large items.</p>
+        <p>The previous lines of CSS almost give us the desired result we want because we get four items per row. But,
+            the
+            last row has two large items.</p>
+        <p>The previous lines of CSS almost give us the desired result we want because we get four items per row. But,
+            the
+            last row has two large items.</p>
+        <p>The previous lines of CSS almost give us the desired result we want because we get four items per row. But,
+            the
+            last row has two large items.</p>
+        <p>The previous lines of CSS almost give us the desired result we want because we get four items per row. But,
+            the
+            last row has two large items.</p>
+
+    </div>
+</body>
+
+</html>
