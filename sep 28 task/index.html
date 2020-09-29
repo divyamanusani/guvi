@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                Name
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="name" id="Name">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-4">
+                Base Cost
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="cost" id="Cost">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-4">
+                Description
+            </div>
+            <div class="col-md-8">
+                <input type="text" name="desc" id="description">
+            </div>
+        </div><br>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="#" onclick="addVariant()"><img src='add.png' width="10%" height="7%"></a>Add Variant
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+               <input type="button" value="Generate" class="btn btn-info" onclick='generate()'>
+            </div>
+        </div>
+    </div>
+    <script src="details.js"></script>
+</body>
+</html>
