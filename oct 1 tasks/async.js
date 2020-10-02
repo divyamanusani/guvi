@@ -92,10 +92,10 @@ async function displayWeatherData(cityName,countryName) {
         weatherResult = jsonData;
         document.querySelector('.modal-title').innerHTML = countryName + ' Weather Details';
         var weatherDetails = `Description = ${weatherResult.weather[0].description}<br>
-        Temperature = ${weatherResult.main.temp}<br>
-        Feels Like = ${weatherResult.main.feels_like}
-        <br>Minimum Temperature = ${weatherResult.main.temp_min}
-        <br>Maximum Temperature = ${weatherResult.main.temp_max}
+        Temperature = ${weatherResult.main.temp} &#8451;<br>
+        Feels Like = ${weatherResult.main.feels_like} &#8451;
+        <br>Minimum Temperature = ${weatherResult.main.temp_min} &#8451;
+        <br>Maximum Temperature = ${weatherResult.main.temp_max} &#8451;
         <br>Pressure = ${weatherResult.main.pressure}
         <br>Humidity = ${weatherResult.main.humidity}`;
 
