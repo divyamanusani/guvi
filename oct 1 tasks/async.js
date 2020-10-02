@@ -87,7 +87,7 @@ getRestData().then((data) => {
 async function displayWeatherData(cityName,countryName) {
     try {
         var APIkey = 'e8a7acffe1db76fe417b6b1c33db93d7';
-        var weatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`);
+        var weatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}&units=metric`);
         var jsonData = await weatherData.json();
         weatherResult = jsonData;
         document.querySelector('.modal-title').innerHTML = countryName + ' Weather Details';
