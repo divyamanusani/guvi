@@ -23,9 +23,12 @@ dialog.appendChild(content);
 modal.appendChild(dialog);
 
 var container = createEleWithClass('div', 'container');
-var cardCol = createEleWithClass('div', 'card-columns');
-container.append(modal, cardCol);
+//var cardCol = createEleWithClass('div', 'card-columns');
+container.append(modal);
 document.body.append(container);
+
+
+
 
 var result = [];
 var weatherResult = [];
@@ -49,42 +52,54 @@ function getRestData() {
 }
 
 getRestData().then((data) => {
-    data[0].forEach((res) => {
-        var card = createEleWithClass('div', 'card');
-        var cardHeader = createEleWithClass('div', 'card-header');
-        var cardbody = createEleWithClass('div', 'card-body text-center');
-        var p = createEleWithClass('p', 'card-text');
-        var btn = createEleWithClass('button', 'btn btn-default');
-        btn.setAttribute('type', 'button');
-        btn.setAttribute('id', 'myBtn');
-        btn.innerHTML = 'Click for Weather';
-        btn.setAttribute('onclick', `displayWeatherData('${res.capital}','${res.name}')`);
-        btn.setAttribute('data-toggle', 'modal');
-        btn.setAttribute('data-target', '#myModal');
+    data[0].pop();
+    var index=0;
+    var bigData = data[0];
+    for (var i = 0; i < bigData.length; i = i + 3) {
+        var row = createEleWithClass('div', 'row');
 
-        cardbody.append(p, btn);
-        card.append(cardHeader, cardbody);
-        cardCol.appendChild(card);
+ 
+        for (var j = 1; j <= 3; j++) {
+            var col = createEleWithClass('div', 'col-lg-4 col-sm-12');
+            var card = createEleWithClass('div', 'card-flex border mt-3 mb-3');
+            var cardHeader = createEleWithClass('div', 'card-header');
+            var cardbody = createEleWithClass('div', 'card-body text-center');
+            var p = createEleWithClass('p', 'card-text');
+            var btn = createEleWithClass('button', 'btn btn-default');
+            btn.setAttribute('type', 'button');
+            btn.setAttribute('id', 'myBtn');
+            btn.innerHTML = 'Click for Weather';
+            btn.setAttribute('onclick', `displayWeatherData('${bigData[index].capital}','${bigData[index].name}')`);
+            btn.setAttribute('data-toggle', 'modal');
+            btn.setAttribute('data-target', '#myModal');
 
-        cardHeader.innerHTML = res.name;
+            cardbody.append(p, btn);
+            card.append(cardHeader, cardbody);
+            col.appendChild(card);
 
-        var cardData =
-            '<img src=' + res.flag + ' width="100%" height="20%"><br><br>' + 'Capital: ' + res.capital + '<br>' +
-            'Latlon: ' + res.latlng + '<br>' +
-            'Region: ' + res.region + '<br>' +
-            'Currency Code: ' + res.currencies[0].code + '<br>' +
-            'Currency Name: ' + res.currencies[0].name + '<br>' +
-            'Currency Symbol: ' + res.currencies[0].symbol + '<br>';
+            cardHeader.innerHTML = bigData[index].name;
 
-        p.innerHTML = cardData;
-    });
+            var cardData =
+                '<img src=' + bigData[index].flag + ' width="100%"><br><br>' + 'Capital: ' + bigData[index].capital + '<br>' +
+                'Latlon: ' + bigData[index].latlng + '<br>' +
+                'Region: ' + bigData[index].region + '<br>' +
+                'Country Code: ' + bigData[index].currencies[0].code + '<br>' +
+                'Currency Name: ' + bigData[index].currencies[0].name + '<br>' +
+                'Currency Symbol: ' + bigData[index].currencies[0].symbol + '<br>';
+
+            p.innerHTML = cardData;
+            row.appendChild(col);
+            index++;
+        }
+        container.appendChild(row);    
+    }
 }).catch((err) => {
     console.log(err);
 });
 
 
 // Display country weather details
-async function displayWeatherData(cityName,countryName) {
+async function displayWeatherData(cityName, countryName) {
     try {
         var APIkey = 'e8a7acffe1db76fe417b6b1c33db93d7';
         var weatherData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}&units=metric`);
@@ -98,7 +113,7 @@ async function displayWeatherData(cityName,countryName) {
         <br>Maximum Temperature = ${weatherResult.main.temp_max} &#8451;
         <br>Pressure = ${weatherResult.main.pressure}
         <br>Humidity = ${weatherResult.main.humidity}`;
-
+        console.log(cityName);
         document.querySelector('.modal-body').innerHTML = weatherDetails;
     }
     catch (err) {
