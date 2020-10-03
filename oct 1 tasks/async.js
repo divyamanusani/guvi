@@ -15,7 +15,6 @@ mbtn.setAttribute('type', 'button');
 mbtn.innerHTML = '&times';
 
 var h4 = createEleWithClass('h4', 'modal-title');
-h4.innerHTML = 'Modal Header';
 mfooter.innerHTML = '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
 header.append(h4, mbtn);
 content.append(header, mbody, mfooter);
@@ -23,7 +22,6 @@ dialog.appendChild(content);
 modal.appendChild(dialog);
 
 var container = createEleWithClass('div', 'container');
-//var cardCol = createEleWithClass('div', 'card-columns');
 container.append(modal);
 document.body.append(container);
 

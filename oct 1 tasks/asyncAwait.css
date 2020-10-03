@@ -50,11 +50,28 @@ img {
     margin:20px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 990px) {
     img {
         width: 100%;
         height: auto;
         margin-bottom: 20px;
 
     }
+    
+    .row{
+        margin:0;
+    }
+
+    .col-sm-12{
+        margin-bottom:20px;
+    }
+
+    .container{
+        max-width: 100%;
+    }
+
+    .card-body{
+        padding:20px;
+    }
+
 }
