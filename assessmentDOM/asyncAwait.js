@@ -16,7 +16,7 @@ var a = [];
 for (var i = 0; i < 12; i++) {
     a[i] = document.createElement('a');
     setAttributesInEle(a[i], {
-        'href':'#',
+        'href': '#',
         'class': "nav-item nav-link",
         'id': mainSections[i],
         'onclick': `getSectionData('${mainSections[i]}')`,
@@ -37,13 +37,23 @@ async function getSectionData(sectionName) {
     try {
         console.log(sectionName);
 
-        document.querySelectorAll('.card').forEach(function(a){
+        document.querySelectorAll('.card').forEach(function (a) {
             a.remove();
+        });
+
+        //removing active class from all nav items
+        document.querySelectorAll('.nav-item').forEach((ele) => {
+            var newClass = ele.className.replace(' active', '');
+            ele.className = newClass;
         })
+
+        // setting the nav item to active class
+        document.getElementById(sectionName).className += ' active';
+
         var keyAPI = 'QeV70U0bJTykQcHCEycy0WAMJubGdqRC';
         var sectionData = await fetch(`https://api.nytimes.com/svc/topstories/v2/${sectionName}.json?api-key=${keyAPI}`);
         var jsonData = await sectionData.json();
-        var sectionInfo = jsonData.results;  
+        var sectionInfo = jsonData.results;
         console.log(sectionInfo);
 
         sectionInfo.forEach((res) => {
@@ -51,20 +61,21 @@ async function getSectionData(sectionName) {
             var row = createEleWithClass('div', 'row');
             var colleft = createEleWithClass('div', 'col-md-8');
             var colright = createEleWithClass('div', 'col-md-4');
-            var divright=createEleWithClass('div','divImage');
+            var divright = createEleWithClass('div', 'divImage');
             var cardBody = createEleWithClass('div', 'card-body');
             var cardImg = createEleWithClass('img', `${sectionName}-card`);
-            var imageUrl=res.multimedia[res.multimedia.length-1].url;
+            var imageUrl = res.multimedia[res.multimedia.length - 1].url;
             setAttributesInEle(cardImg, {
                 'src': imageUrl,
-                'width':'100%',
-                'height':'100%'
+                'width': '100%',
+                'height': '100%'
             });
             var cardSection = createEleWithClass('h5', `card-title ${sectionName}-card`);
-            var cardTitle = createEleWithClass('h6', `card-subtitle mb-2 ${sectionName}-card`);
+            cardSection.setAttribute('style', 'color:blue;');
+            var cardTitle = createEleWithClass('h6', `card-title mb-2 ${sectionName}-card`);
             var cardDate = createEleWithClass('h6', `card-subtitle mb-2 ${sectionName}-card`);
             var cardAbstract = createEleWithClass('p', `card-text ${sectionName}-card`);
-            var cardItemType = createEleWithClass('h6', `card-subtitle mb-2 ${sectionName}-card`);
+            var cardItemType = createEleWithClass('h6', `card-subtitle text-muted mb-2 ${sectionName}-card`);
             var cardByLine = createEleWithClass('h6', `card-subtitle mb-2 text-muted ${sectionName}-card`);
             var cardContine = createEleWithClass('a', 'continueReading');
             setAttributesInEle(cardContine, {
@@ -73,15 +84,17 @@ async function getSectionData(sectionName) {
             });
             cardSection.innerHTML = res.section;
             cardTitle.innerHTML = res.title;
-            cardDate.innerHTML = res.created_date;
-            cardAbstract.innerHTML = res.abstract;
-            cardContine.innerHTML = '<br>Continue reading';
+            cardItemType.innerHTML = res.item_type;
+            cardByLine.innerHTML=res.byline;
+            cardDate.innerHTML = '<small>' + res.created_date.split('T')[0] + '</small>';
+            cardAbstract.innerHTML = '<br>' + res.abstract;
+            cardContine.innerHTML = 'Continue reading';
 
             container.append(card);
             card.append(row);
             row.append(colleft, colright);
             colleft.append(cardBody);
-            cardBody.append(cardSection, cardTitle, cardDate, cardAbstract, cardItemType, cardByLine, cardContine);
+            cardBody.append(cardSection, cardTitle, cardItemType, cardByLine, cardDate, cardAbstract, cardContine);
             colright.append(divright);
             divright.append(cardImg);
         });
@@ -92,7 +105,7 @@ async function getSectionData(sectionName) {
     }
 };
 
-
+document.getElementById('home').click();
 
 //creating element with classname
 function createEleWithClass(ele, className) {
