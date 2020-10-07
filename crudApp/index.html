@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Application Practise</title>
+    <style>
+
+        table,tr,th,td{
+            text-align: center;
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width:50%;">
+        <form onsubmit="addData(); return false;">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" value="John"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        <table id="userTable">
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+        </table>
+    </div>
+    <script src="crud.js"></script>
+</body>
+
+</html>

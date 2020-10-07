@@ -1,0 +1,26 @@
+body{
+    margin-top: 5px;
+    background-color: lightgrey;
+}
+
+input[type="checkbox"],input[type="radio"]{
+    zoom:1.5;
+  margin:5px;
+    
+}
+
+table,tr,td{
+  border: 1px solid black;
+  border-collapse: collapse;
+   margin:auto;
+}
+
+th,td{
+    padding:20px;
+    margin:10px;
+   text-align: center;
+}
+
+label{
+    padding-left:10px;
+}

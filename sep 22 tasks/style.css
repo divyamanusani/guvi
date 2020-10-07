@@ -21,8 +21,8 @@ body{
     height:20%;
     text-align: center;
     font-size:22px; 
-top:50%;
-padding:20px;
+    top:50%;
+    padding:20px;
 }
 
 input[type="checkbox"],input[type="radio"]{

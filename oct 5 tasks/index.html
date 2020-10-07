@@ -1,0 +1,198 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="database.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-horizontal" name="myForm" method="POST">
+            <div class="form-group"><label class="control-label col-md-2" for="firstname">Full Name</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="text" name="Frstname" id="firstname"
+                        placeholder="Enter Full Name"></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2" for="addr">Address 1</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="text" name="address" id="addr"
+                        placeholder="Enter Address 1"></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2" for="address">Address 2</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="text" name="Address" id="address"
+                        placeholder="Enter Address 2"></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2">Gender</label>
+                <div class="col-md-9"><input type="radio" name="gender" value="Male"><label>Male </label><br><input
+                        type="radio" name="gender" value="Female"><label>Female </label><br></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2">Country</label>
+                <div class="col-md-9"><select class="form-control input-lg" name="countryRegion" id="country">
+                        <option value="India" id="india">India</option>
+                        <option value="Pakisthan" id="pakisthan">Pakisthan</option>
+                        <option value="Australia" id="australia">Australia</option>
+                    </select></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2">Select State</label>
+                <div class="col-md-9"><select class="form-control input-lg" name="stateRegion" id="state">
+                        <option value="AndhraPradesh" id="andhrapradesh">AndhraPradesh</option>
+                        <option value="Assam" id="assam">Assam</option>
+                        <option value="ArunachalPradesh" id="arunachalpradesh">ArunachalPradesh</option>
+                        <option value="Bihar" id="bihar">Bihar</option>
+                        <option value="Goa" id="goa">Goa</option>
+                        <option value="Gujarat" id="gujarat">Gujarat</option>
+                        <option value="JammuAndKashmir" id="jammuandkashmir">JammuAndKashmir</option>
+                        <option value="Jharkhand" id="jharkhand">Jharkhand</option>
+                        <option value="WestBengal" id="westbengal">WestBengal</option>
+                        <option value="Karnataka" id="karnataka">Karnataka</option>
+                        <option value="Kerala" id="kerala">Kerala</option>
+                        <option value="MadhyaPradesh" id="madhyapradesh">MadhyaPradesh</option>
+                        <option value="Maharashtra" id="maharashtra">Maharashtra</option>
+                        <option value="Manipur" id="manipur">Manipur</option>
+                        <option value="Meghalaya" id="meghalaya">Meghalaya</option>
+                        <option value="Mizoram" id="mizoram">Mizoram</option>
+                        <option value="Nagaland" id="nagaland">Nagaland</option>
+                        <option value="Orissa" id="orissa">Orissa</option>
+                        <option value="Punjab" id="punjab">Punjab</option>
+                        <option value="Rajasthan" id="rajasthan">Rajasthan</option>
+                        <option value="Sikkim" id="sikkim">Sikkim</option>
+                        <option value="TamilNadu" id="tamilnadu">TamilNadu</option>
+                        <option value="Tripura" id="tripura">Tripura</option>
+                        <option value="Uttaranchal" id="uttaranchal">Uttaranchal</option>
+                        <option value="UttarPradesh" id="uttarpradesh">UttarPradesh</option>
+                        <option value="Haryana" id="haryana">Haryana</option>
+                        <option value="HimachalPradesh" id="himachalpradesh">HimachalPradesh</option>
+                        <option value="Chhattisgarh" id="chhattisgarh">Chhattisgarh</option>
+                        <option value="Balochistan" id="balochistan">Balochistan</option>
+                        <option value="Khyber Pakhtunkhwa" id="khyber pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                        <option value="PunjabPakisthan" id="punjabpakisthan">PunjabPakisthan</option>
+                        <option value="Sindh" id="sindh">Sindh</option>
+                        <option value="NewSouthWales" id="newsouthwales">NewSouthWales</option>
+                        <option value="Queensland" id="queensland">Queensland</option>
+                        <option value="NorthernTerritory" id="northernterritory">NorthernTerritory</option>
+                        <option value="WesternAustralia" id="westernaustralia">WesternAustralia</option>
+                        <option value="SouthAustralia" id="southaustralia">SouthAustralia</option>
+                        <option value="Victoria" id="victoria">Victoria</option>
+                        <option value="theAustralianCapitalTerritory" id="theaustraliancapitalterritory">
+                            theAustralianCapitalTerritory</option>
+                        <option value="Tasmania" id="tasmania">Tasmania</option>
+                    </select></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2">Select City</label>
+                <div class="col-md-9"><select class="form-control input-lg" name="cityRegion" id="city">
+                        <option value="Amaravathi" id="amaravathi">Amaravathi</option>
+                        <option value="Dispur" id="dispur">Dispur</option>
+                        <option value="Itanagar" id="itanagar">Itanagar</option>
+                        <option value="Patna" id="patna">Patna</option>
+                        <option value="Panaji" id="panaji">Panaji</option>
+                        <option value="Gandhinagar" id="gandhinagar">Gandhinagar</option>
+                        <option value="Srinagar" id="srinagar">Srinagar</option>
+                        <option value="Ranchi" id="ranchi">Ranchi</option>
+                        <option value="Kolkata" id="kolkata">Kolkata</option>
+                        <option value="Bangalore" id="bangalore">Bangalore</option>
+                        <option value="Thiruvananthapuram" id="thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="Bhopal" id="bhopal">Bhopal</option>
+                        <option value="Mumbai" id="mumbai">Mumbai</option>
+                        <option value="Imphal" id="imphal">Imphal</option>
+                        <option value="Shillong" id="shillong">Shillong</option>
+                        <option value="Aizawl" id="aizawl">Aizawl</option>
+                        <option value="Kohima" id="kohima">Kohima</option>
+                        <option value="Bhubneshwar" id="bhubneshwar">Bhubneshwar</option>
+                        <option value="Chandigarh" id="chandigarh">Chandigarh</option>
+                        <option value="Jaipur" id="jaipur">Jaipur</option>
+                        <option value="Gangtok" id="gangtok">Gangtok</option>
+                        <option value="Chennai" id="chennai">Chennai</option>
+                        <option value="Agartala" id="agartala">Agartala</option>
+                        <option value="Roorkee" id="roorkee">Roorkee</option>
+                        <option value="Lucknow" id="lucknow">Lucknow</option>
+                        <option value="Shimla" id="shimla">Shimla</option>
+                        <option value="Raipur" id="raipur">Raipur</option>
+                        <option value="Quetta" id="quetta">Quetta</option>
+                        <option value="Peshawar" id="peshawar">Peshawar</option>
+                        <option value="Karachi" id="karachi">Karachi</option>
+                        <option value="Sydney" id="sydney">Sydney</option>
+                        <option value="Brisbane" id="brisbane">Brisbane</option>
+                        <option value="Darwin" id="darwin">Darwin</option>
+                        <option value="Perth" id="perth">Perth</option>
+                        <option value="Adelaide" id="adelaide">Adelaide</option>
+                        <option value="Melbourne" id="melbourne">Melbourne</option>
+                        <option value="Canberra" id="canberra">Canberra</option>
+                        <option value="Hobert" id="hobert">Hobert</option>
+                    </select></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2" for="pin">Pincode</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="number" name="Pin" id="pin"
+                        placeholder="Enter PinCode"></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2" for="email">Email</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="email" name="Email" id="email"
+                        placeholder="Enter EmailId"></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2" for="pwd">Password</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="password" name="Password" id="pwd"
+                        placeholder="Enter Password"></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2" for="repwd">Re-Enter Password</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="password" name="Re-Enter Password"
+                        id="repwd" placeholder="Re-Enter Password"></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2">Foods you love.<br>Select atleast 2
+                    foods</label>
+                <div class="col-md-9"><label><input type="checkbox" value="Chapathi">Chapathi</label><label><input
+                            type="checkbox" value="IdliVada">IdliVada</label><label><input type="checkbox"
+                            value="Dosa">Dosa</label><label><input type="checkbox"
+                            value="Pavbhaji">Pavbhaji</label><label><input type="checkbox"
+                            value="Pongal">Pongal</label><label><input type="checkbox" value="Puri">Puri</label></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2">Select Color</label>
+                <div class="col-md-9"><select class="form-control input-lg" name="favcolor" id="color">
+                        <option value="blue" id="blue">blue</option>
+                        <option value="green" id="green">green</option>
+                        <option value="violet" id="violet">violet</option>
+                        <option value="yellow" id="yellow">yellow</option>
+                        <option value="orange" id="orange">orange</option>
+                        <option value="red" id="red">red</option>
+                        <option value="purple" id="purple">purple</option>
+                    </select></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-2">Select Marital Status</label>
+                <div class="col-md-9"><select class="form-control input-lg" name="marrystatus" id="MaritalStatus">
+                        <option value="Married" id="married">Married</option>
+                        <option value="Single" id="single">Single</option>
+                    </select></div>
+            </div>
+            <div class="form-group"><label class="control-label col-md-7"><input type="button"
+                        class="btn btn-primary input-lg" value="Submit" onclick="getDetails()"></label></div>
+        </form>
+    </div>
+        <table id="userTable">
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Foods</th>
+                <th>Color</th>
+                <th>Marital-Status</th>
+            </tr>
+        </table>
+    </div>
+    <script src="database.js"></script>
+</body>
+
+</html>
+
+<!--
+
+Marital Status
+Fav Color
+
+// Compare both password before submiting
+// When Select Country respective State should be listed
+// When Select State respective City should listed
+// Press submit should be populated in TABLE
+// Edit/Delete should be implemented -->
