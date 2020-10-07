@@ -2,26 +2,39 @@
 // read :get
 //update:put/patch
 //delete:delete
-var count = 0;
+var userList = [];
+var isEdit = false;
+var selectedRow = null;
+var todeleteRow = null;
 async function addData() {
-    // console.log(event);
-    // event.preventDefault();
     var data = {
         fname: document.getElementById('fname').value,
         lname: document.getElementById('lname').value
     }
 
+    if (isEdit) {
+        var postData = await fetch("https://5f7b044f40abc60016472b2c.mockapi.io/users/" + selectedRow, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
+    else {
+        var postData = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/users', {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
 
-    var postData = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/users', {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+    }
 
     var postRes = await postData.json();
     console.log('post=' + postRes);
+    isEdit = false;
     getUsers();
 
 }
@@ -34,7 +47,8 @@ async function getUsers() {
 }
 
 function fillData(userData) {
-    console.log(userData);
+    userList = userData;
+    console.log(userList);
     document.getElementById('userTable').innerHTML = `
     <tr>
     <th>FirstName</th>
@@ -45,13 +59,13 @@ function fillData(userData) {
         var tdfname = document.createElement('td');
         var tdlname = document.createElement('td');
         var tdEdit = document.createElement('td');
-        tdEdit.setAttribute('onclick', "getRow(" + user.id + ")");
+
         var tdDel = document.createElement('td');
         var editBtn = document.createElement('button');
-        editBtn.setAttribute('id', 'editbutton');
-
+        editBtn.setAttribute('onclick', "getRow(" + user.id + ")");
         var delBtn = document.createElement('button');
         delBtn.setAttribute('id', 'deletebutton');
+        delBtn.setAttribute('onclick', "deleteRow(" + user.id + ")");
         editBtn.innerHTML = "Edit";
         delBtn.innerHTML = 'Delete';
         tdfname.innerHTML = user.fname;
@@ -66,7 +80,32 @@ function fillData(userData) {
 }
 
 function getRow(id) {
-    alert(id);
+    console.log(id);
+    isEdit = true;
+    var i;
+    userList.forEach((user,index) => {
+        console.log(user.id);
+        if (id==user.id) {
+            selectedRow = user.id;
+            i=index;
+        }
+    });
+    console.log('id='+id);
+    console.log('i='+i);
+    console.log('selectedRow='+selectedRow);
+    document.getElementById('fname').value = userList[i].fname;
+    document.getElementById('lname').value = userList[i].lname;
+}
+
+async function deleteRow(id) {
+    console.log(id);
+
+    todeleteRow = id;
+    var deleteR = await fetch("https://5f7b044f40abc60016472b2c.mockapi.io/users/" + todeleteRow, {
+        method: "DELETE",
+    })
+    getUsers();
+
 }
 
 
