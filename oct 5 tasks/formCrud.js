@@ -1,46 +1,115 @@
-// create
-//read
-//update
-//delete
+// create post
+//read get
+//update put/patch
+//delete delete
+
+var isEdit = false;
+var userDataList = [];
 
 async function getUsers() {
-    var userReq = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/users');
+    var userReq = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/formUsers');
     var userData = await userReq.json();
     console.log(userData);
+    userDataList = userData;
     fillData(userData);
 }
 
-getUsers();
-
 function fillData(userData) {
-    userData.forEach(ele => {
+    userData.forEach((user) => {
         var tr = document.createElement('tr');
-
-        for(var i=0;i<10;i++){
-            var td[0] = document.createElement('td');
-            tdName.innerHTML = ele.name;
-        }
-        
-    }
-
+        var tdName = document.createElement('td');
+        var tdAddr = document.createElement('td');
+        var tdGender = document.createElement('td');
+        var tdCountry = document.createElement('td');
+        var tdState = document.createElement('td');
+        var tdCity = document.createElement('td');
+        var tdemail = document.createElement('td');
+        var tdFood = document.createElement('td');
+        var tdColor = document.createElement('td');
+        var tdmaritalStatus = document.createElement('td');
+        var tdEditCol = document.createElement('td');
+        var tdDelCol = document.createElement('td');
+        var tdEdit = document.createElement('button');
+        tdEdit.innerHTML = 'Edit';
+        var tdDel = document.createElement('button');
+        tdDel.innerHTML = 'Delete';
+        tdEdit.setAttribute('onclick', `editRow(${user.id})`);
+        tdDel.setAttribute('onclick', `delRow(${user.id})`);
+        tdName.innerHTML = user.fullname;
+        tdAddr.innerHTML = user.address;
+        tdGender.innerHTML = user.gender;
+        tdCountry.innerHTML = user.country;
+        tdState.innerHTML = user.state;
+        tdCity.innerText = user.city;
+        tdemail.innerHTML = user.email;
+        tdFood.innerHTML = user.food;
+        tdColor.innerHTML = user.color;
+        tdmaritalStatus.innerHTML = user.maritalStatus;
+        tdEditCol.appendChild(tdEdit);
+        tdDelCol.appendChild(tdDel);
+        tr.append(tdName, tdAddr, tdGender, tdCountry, tdState, tdCity, tdemail, tdFood, tdColor, tdmaritalStatus, tdEditCol, tdDelCol);
+        document.getElementById('userTable').appendChild(tr);
+    });
 
 }
 
-// [
-//     {
-//       "fname": "divya",
-//       "lname": "m",
-//       "address": "strretno123",
-//       "gender": "female",
-//       "country": "India",
-//       "state": "andhra",
-//       "city": "Tirupati",
-//       "email": "d@gmail.com",
-//       "food": "idli",
-//       "color": "blue",
-//       "maritalStatus": "married"
-//     }
-//   ]
+function editRow(id) {
+
+    var obj = {
+        'fullname': 'fullname',
+        'address': 'addr',
+        'city': 'city',
+        'color': 'color',
+        'state': 'state',
+        'country': 'country',
+        'email': 'email',
+        'maritalStatus': 'MaritalStatus',
+
+    }
+    isEdit = true;
+
+    for (var key in obj) {
+        document.getElementById(obj[key]).value = userDataList[id - 1][key];
+        console.log(userDataList[id - 1][key]);
+    }
+
+}
+
+
+async function addData() {
+    let check = document.querySelectorAll('input[type="checkbox"]:checked');
+    let foods = [];
+    for (var i = 0; i < check.length; i++) {
+        foods.push(check[i].value);
+    }
+    var data = {
+        fullname: document.getElementById('fullname').value,
+        address: document.getElementById('addr').value,
+        city: document.getElementById('city').value,
+        color: document.getElementById('color').value,
+        state: document.getElementById('state').value,
+        country: document.getElementById('country').value,
+        email: document.getElementById('email').value,
+        food: foods.join(),
+        gender: document.querySelector('input[type="radio"]:checked').value,
+        maritalStatus: document.getElementById('MaritalStatus').value,
+    }
+
+
+    var postReq = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/formUsers', {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    var postData = await postReq.json();
+    console.log('postDATA=', postData);
+    getUsers();
+
+}
+
+getUsers();
 
 
 

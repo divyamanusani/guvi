@@ -15,7 +15,7 @@ class petsAvailable {
     }
 
 
-    insertPets(insPet: Pet[]) {
+     insertPets(insPet: Pet[]) {
         this.petsAvail.push(...insPet);
     }
     printAvailStatus() {

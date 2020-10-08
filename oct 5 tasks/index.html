@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database form</title>
+    <title>Form Crud application</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="database.css">
+    <link rel="stylesheet" href="crud.css">
 </head>
 
 <body>
     <div class="container">
-        <form class="form-horizontal" name="myForm" method="POST">
-            <div class="form-group"><label class="control-label col-md-2" for="firstname">Full Name</label>
-                <div class="col-md-9"><input class="form-control input-lg" type="text" name="Frstname" id="firstname"
+        <form class="form-horizontal" name="myForm"  onsubmit="addData();return false;">
+            <div class="form-group"><label class="control-label col-md-2" for="fullname">Full Name</label>
+                <div class="col-md-9"><input class="form-control input-lg" type="text" name="name" id="fullname"
                         placeholder="Enter Full Name"></div>
             </div>
             <div class="form-group"><label class="control-label col-md-2" for="addr">Address 1</label>
@@ -162,8 +162,8 @@
                         <option value="Single" id="single">Single</option>
                     </select></div>
             </div>
-            <div class="form-group"><label class="control-label col-md-7"><input type="button"
-                        class="btn btn-primary input-lg" value="Submit" onclick="getDetails()"></label></div>
+            <div class="form-group"><label class="control-label col-md-7"><input type="submit"
+                        class="btn btn-primary input-lg" value="Submit"></label></div>
         </form>
     </div>
         <table id="userTable">
@@ -181,7 +181,7 @@
             </tr>
         </table>
     </div>
-    <script src="database.js"></script>
+    <script src="formCrud.js"></script>
 </body>
 
 </html>
