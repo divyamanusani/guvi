@@ -40,15 +40,11 @@ var petsRequest = /** @class */ (function () {
         console.log('******************');
     };
     petsRequest.prototype.checkMatch = function () {
-        // this.petAv.petsAvail[];
-        // this.petRequests[];
         var count = 0;
         for (var i = 0; i < this.petRequests.length; i++) {
             count = 0;
             for (var j = 0; j < this.petAv.petsAvail.length; j++) {
                 if (this.petRequests[i].animalType === this.petAv.petsAvail[j].animalType) {
-                    console.log(this.petRequests[i].animalType, this.petRequests[i].animalCount);
-                    console.log(this.petAv.petsAvail[j].animalType, this.petAv.petsAvail[j].animalCount);
                     if (this.petRequests[i].animalCount <= this.petAv.petsAvail[j].animalCount) {
                         console.log(this.petRequests[i].animalCount + " " + this.petRequests[i].animalType + " are available.");
                     }
