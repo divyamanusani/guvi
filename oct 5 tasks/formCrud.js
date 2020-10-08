@@ -15,6 +15,20 @@ async function getUsers() {
 }
 
 function fillData(userData) {
+    document.getElementById('userTable').innerHTML =
+        `<tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Country</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Foods</th>
+        <th>Color</th>
+        <th>Marital-Status</th>
+    </tr>`;
+
     userData.forEach((user) => {
         var tr = document.createElement('tr');
         var tdName = document.createElement('td');
@@ -54,6 +68,17 @@ function fillData(userData) {
 }
 
 function editRow(id) {
+    console.log(id);
+    isEdit = true;
+    var i;
+    userDataList.forEach((user, index) => {
+        console.log(user.id);
+        if (id == user.id) {
+            selectedRow = user.id;
+            i = index;
+        }
+    });
+
 
     var obj = {
         'fullname': 'fullname',
@@ -66,13 +91,20 @@ function editRow(id) {
         'maritalStatus': 'MaritalStatus',
 
     }
-    isEdit = true;
 
     for (var key in obj) {
-        document.getElementById(obj[key]).value = userDataList[id - 1][key];
-        console.log(userDataList[id - 1][key]);
+        document.getElementById(obj[key]).value = userDataList[i][key];
+        console.log(userDataList[i][key]);
     }
 
+}
+
+async function delRow(id){
+    var deleteRowId=id;
+    var postReq = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/formUsers/' + deleteRowId, {
+        method: "DELETE",
+    })
+    getUsers();
 }
 
 
@@ -95,16 +127,27 @@ async function addData() {
         maritalStatus: document.getElementById('MaritalStatus').value,
     }
 
+    if (isEdit) {
+        var postReq = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/formUsers/' + selectedRow, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
 
-    var postReq = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/formUsers', {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+    } else {
+        var postReq = await fetch('https://5f7b044f40abc60016472b2c.mockapi.io/formUsers', {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
     var postData = await postReq.json();
     console.log('postDATA=', postData);
+    isEdit = false;
     getUsers();
 
 }
