@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">   
+    <title>TV OOPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tv.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2 id="movieInfo">Panasonic Tv at channel 1, volume 50</h2>
+            <div class="laptop-wrapper">
+                <iframe id="ledframe" width="560" height="315" src="videoFiles/sample.mp4" 
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="buttonWrap">
+                <input type="button" value="Plasma TV" onclick="changetoplasma()">
+                <input type="button" value="LED Tv" onclick="changetoled()">
+                <input type="button" value="Reset TV Channel and Volume" id="reset">    
+
+            </div>
+
+            <div class="flex-container">
+                <input type="button" class="disabled">
+                <input type="button" value="power" onclick="powerOnOff()">
+                <input type="button" value="" class="disabled">
+
+                <input type="button" value="" class="disabled">
+                <input type="button" value="ch+" id="channelInc">
+                <input type="button" value="" class="disabled">
+
+                <input type="button" value="vol+" id="volumeInc">
+                <input type="button" value="play" onclick="playPause()">
+                <input type="button" value="vol-" id="volumeDec">
+
+                <input type="button" value="" class="disabled">
+                <input type="button" value="ch-" id="channelDec">
+                <input type="button" value="" class="disabled">
+
+
+                <input type="button" value="1" id="channel1">
+                <input type="button" value="2" id="channel2">
+                <input type="button" value="3" id="channel3">
+                <input type="button" value="4" id="channel4">
+                <input type="button" value="5" id="channel5">
+                <input type="button" value="6" id="channel6">
+                <input type="button" value="7" id="channel7">
+                <input type="button" value="8" id="channel8">
+                <input type="button" value="9" id="channel9">
+
+                <input type="button" value="" class="disabled">
+                <input type="button" value="0" id="channel0">
+                <input type="button" value="" class="disabled">
+
+            </div>
+        </div>
+    </div>
+    <script src="tv.js" type="text/javascript"></script>
+
+</body>
+
+</html>

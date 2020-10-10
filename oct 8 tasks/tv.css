@@ -1,0 +1,77 @@
+.container{
+  width:50%;
+  height:50%;
+  
+}
+
+div.laptop-wrapper {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+}
+
+.buttonWrap > input[type="button"]{
+  width:200px;
+  height:50px;
+  font-size:20px;
+  
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color:rgb(73, 70, 70);
+  position: absolute;
+  left:60%;
+  width:330px;
+  top:5%;
+}
+
+.flex-container > input[type="button"] {
+  background-color: #f1f1f1;
+  width: 90px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size:23px;
+  cursor:pointer;  
+}
+
+.flex-container> input.disabled{
+    background-color:rgb(73, 70, 70) ;
+    cursor:auto;
+}
+
+#movieInfo{
+  margin-left:25%;
+  margin-top: 2%;
+}
+
+
+#ledframe {
+  box-sizing: border-box;
+  background: url(https://i.stack.imgur.com/zZNgk.png) center center no-repeat;  
+  background-size: contain;
+  padding: 11.9% 15.5% 14.8%; 
+  position: absolute;
+  left: 0;
+  bottom:0;
+   width:100%; 
+  height: 100%;
+  overflow:hidden;    
+}
+
+#plasmaframe{
+box-sizing: border-box;
+background:url(http://img01.deviantart.net/05b6/i/2011/030/8/5/apple_led_cinema_screen_by_fisshy94-d38e3o5.png) center center no-repeat;
+background-size: contain;
+padding:1% 15.5%  15.5% 14.8%; 
+position: absolute;
+left: 0;
+bottom:0;
+width: 110%;
+height: 100%;
+overflow:hidden;    
+}
+
