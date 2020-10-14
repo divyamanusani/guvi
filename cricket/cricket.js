@@ -1,5 +1,5 @@
 var count = 0;
-var timerLimit = 30;
+var timerLimit = 10;
 var Game = /** @class */ (function () {
     function Game() {
         this.numBallsPerOver = 6;
@@ -19,18 +19,23 @@ var Game = /** @class */ (function () {
     Game.prototype.generateResult = function () {
         var _this = this;
         return function () {
+            var resBtn = document.querySelector('.generateRes');
             var div = document.querySelector('.genRes');
-            var h5 = document.createElement('h5');
-            var matchWinner = document.createElement('h5');
+            var h3 = document.createElement('h3');
+            var matchWinner = document.createElement('h3');
             if (_this.teamA.teamHighestScore > _this.teamB.teamHighestScore) {
-                h5.innerHTML = '<br>WINNING TEAM : Team 1';
-                matchWinner.innerHTML = "Man of the match - " + _this.teamA.manOftheTeam();
+                h3.innerHTML = '<br>WINNING TEAM : <b>Team 1</b><hr>';
+                matchWinner.innerHTML = "Man of the match - <b>" + _this.teamA.manOftheTeam() + "</b>";
+            }
+            else if (_this.teamA.teamHighestScore < _this.teamB.teamHighestScore) {
+                h3.innerHTML = '<br>WINNING TEAM : <b>Team 2</b><hr>';
+                matchWinner.innerHTML = "Man of the match - <b>" + _this.teamB.manOftheTeam() + "</b>";
             }
             else {
-                h5.innerHTML = 'WINNING TEAM : Team 2';
-                matchWinner.innerHTML = "<br>Man of the match - " + _this.teamB.manOftheTeam();
+                h3.innerHTML = '<br><b>DRAW MATCH</b><hr>';
             }
-            div.append(h5, matchWinner);
+            div.append(h3, matchWinner);
+            resBtn.disabled = true;
         };
     };
     Game.prototype.startGameTimer = function () {
@@ -135,7 +140,7 @@ var Team = /** @class */ (function () {
                 playerMax = i + 1;
             }
         }
-        return "Player " + playerMax + " - " + maxScore;
+        return "Player " + playerMax + " with score " + maxScore;
     };
     return Team;
 }());
@@ -195,30 +200,3 @@ window.onload = function () {
     document.querySelector('.hitteam1').disabled = true;
     document.querySelector('.hitteam2').disabled = true;
 };
-// var counter = 0;
-//   function startTimer(duration, display) {
-//     var timer = duration,
-//       minutes, seconds;
-//     setInterval(function() {
-//       minutes = parseInt(timer / 60, 10)
-//       seconds = parseInt(timer % 60, 10);
-//       minutes = minutes < 10 ? "0" + minutes : minutes;
-//       seconds = seconds < 10 ? "0" + seconds : seconds;
-//       display.textContent = minutes + ":" + seconds;
-//       if (--timer < 0) {
-//         alert("You type " + counter + " WPM");
-//         timer = duration;
-//       }
-//     }, 1000);
-//   }
-//   function myFunction() {
-//     if (counter == 0) {
-//       var oneMinute = 60,
-//         display = document.querySelector('#timer');
-//       startTimer(oneMinute, display);
-//       counter++;
-//     } else {
-//       counter++;
-//     }
-//   };
-//   myFunction();
